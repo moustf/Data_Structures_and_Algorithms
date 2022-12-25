@@ -40,3 +40,5 @@ function findPeakElementTwo(nums: number[]): number {
 
   return -1;
 };
+
+const findPeakElementThree = (nums: number[]): number => nums.indexOf(Math.max(...nums));
