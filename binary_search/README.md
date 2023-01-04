@@ -59,6 +59,10 @@ const binarySearch = (nums: Array<integer>, target: number): number => {
 - left = mid + 1 = 3 | right = 5 | mid = 3 + floor(5 - 3) / 2 = 4 | nums[mid] would be nums[4] = 5.
   - Now we reached the scenario where our target is the at the mid position, and we will return the mid which is 4.
 
+## How to choose between templates?
+
+*Please press **[HERE](./templateAnalysis.md)** to learn how to choose between the three templates in Binary Search.*
+
 ### Side notes
 
 - We used the formula `left + Math.floor(right - left) / 2` to avoid overflow. Since most of the languages have their integer data type's most capacity to (2^31) which equals 2,147,483,647, when you try to sum two number of about this range, the result value will overflow the correct result, so the formula that we use is safer than using `(left + right) / 2`.
