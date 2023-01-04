@@ -33,3 +33,30 @@ function reverseListOne(head: ListNode | null): ListNode | null {
   head.next = null;
   return newHead;
 };
+
+function reverseListTwo(head: ListNode | null): ListNode | null {
+  // ! Two pointers approach:
+  let [prev, curr, next] = [null, head, null];
+
+  while (curr) {
+    // ? The first element will point at null, then next node will point at the current node.
+    next = curr.next;
+    curr.next = prev;
+
+    // ? Shifting the pointers a head by one node each time.
+    prev = curr;
+    curr = next;
+  }
+
+  // ? After the first round:
+  // * next: 2 -> 3 -> 4 -> 5.
+  // * prev: 1 -> Null.
+  // * curr: 2 -> 3 -> 4 -> 5.
+  // ? After the second round:
+  // * next: 3 -> 4 -> 5.
+  // * prev: 2 -> 3 -> 4 -> 5 -> 1 -> Null.
+  // * curr: 3 -> 4 -> 5.
+  // ? And so on ...
+
+  return prev;
+};
