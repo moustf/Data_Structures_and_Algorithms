@@ -45,3 +45,23 @@ function mergeTwoListsOne(list1: ListNode | null, list2: ListNode | null): ListN
 
   return newList.next;
 };
+
+// ! O (M + N)
+function mergeTwoListsTwo(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+  if (!list1) {
+    // ? list1 is empty, so list2 is empty or has nodes. Either ways we can return it.
+    return list2;
+  }
+  if (!list2) {
+    // ? list2 is empty, so list2 is empty or has nodes. Either ways we can return it.
+    return list1;
+  }
+
+  if (list1.val <= list2.val) {
+    list1.next = mergeTwoListsTwo(list1.next, list2);
+    return list1;
+  } else {
+    list2.next = mergeTwoListsTwo(list1, list2.next);
+    return list2;
+  }
+};
