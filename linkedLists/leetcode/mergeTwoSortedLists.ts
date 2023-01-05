@@ -58,10 +58,14 @@ function mergeTwoListsTwo(list1: ListNode | null, list2: ListNode | null): ListN
   }
 
   if (list1.val <= list2.val) {
+    // ? First, we will move list1 one node towards the right.
     list1.next = mergeTwoListsTwo(list1.next, list2);
     return list1;
   } else {
+    // ? The same, we will move list2 one node towards the right.
     list2.next = mergeTwoListsTwo(list1, list2.next);
     return list2;
   }
+
+  // ? To understand the recursion even more, try to trace the code as the call stack would.
 };
