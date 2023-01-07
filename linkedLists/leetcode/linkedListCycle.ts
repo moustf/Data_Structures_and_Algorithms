@@ -29,3 +29,19 @@ function hasCycleOne(head: ListNode | null): boolean {
 
   return false;
 };
+
+function hasCycleTwo(head: ListNode | null): boolean {
+  // ? This solution uses a set which stores unique character -store the same node only once-,
+  // ? loops over the list of nodes and check if the set has this node or not.
+  // ? a very easy and basic solution.
+  let unique = new Set();
+
+  while (head) {
+      if (unique.has(head)) return true;
+
+      unique.add(head);
+      head = head.next;
+  }
+
+  return false;
+};
