@@ -9,3 +9,17 @@ function twoSumOne(nums: number[], target: number): number[] {
       }
   }
 };
+
+function twoSumTwo(nums: number[], target: number): number[] {
+  const store: { [key: number]: number } = {};
+
+  for (let i = 0; i < nums.length; i++) {
+      const diff = target - nums[i];
+      if (store[diff] !== undefined) {
+          return [store[diff], i];
+      }
+      store[nums[i]] = i
+  }
+  
+  return [0, 0];
+};
