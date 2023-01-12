@@ -12,3 +12,15 @@ function groupAnagramsOne(strs: string[]): string[][] {
 
   return Object.values(store);
 };
+
+function groupAnagramsTwo(strs: string[]): string[][] {
+  const res = strs.reduce((obj, str) => {
+      const ss = [...str].sort().join('');
+      obj[ss] = obj[ss] ? [...obj[ss], str] : [str];
+      // ? obj[ss] = (obj[ss] || []).concat(str);
+
+      return obj;
+  }, {});
+
+  return Object.values(res);
+};
