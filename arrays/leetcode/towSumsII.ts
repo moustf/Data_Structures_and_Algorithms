@@ -29,3 +29,20 @@ function twoSumTwo(numbers: number[], target: number): number[] {
       }
   }
 };
+
+function twoSumThree(numbers: number[], target: number): number[] {
+  let left = 0;
+  let right = numbers.length - 1;
+
+  while (right > left) {
+      let l = numbers[left];
+      let r = numbers[right];
+      if (l + r === target) {
+          return [++left, ++right];
+      } else if (l + r > target) {
+          right -= 1;
+      } else if (l + r < target) {
+          left += 1;
+      }
+  }
+};
