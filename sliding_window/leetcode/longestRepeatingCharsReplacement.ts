@@ -18,7 +18,7 @@ const subtractLeftFrequency = (s: string, left: number, map: number[]) => {
     return map[index];
 };
 
-function characterReplacement(s: string, k: number): number {
+function characterReplacementOne(s: string, k: number): number {
 let [left, right, longest, max] = new Array(4).fill(0);
     const frequencyMap = new Array(26).fill(0);
 
@@ -41,4 +41,45 @@ let [left, right, longest, max] = new Array(4).fill(0);
     }
 
     return max;
+};
+
+function characterReplacementTwo(s: string, k: number): number {
+    let count: { [key: string]: number } = {};
+    let res = 0;
+    let l = 0;
+
+    for (let r = 0; r < s.length; r++) {
+        count[s[r]] = 1 + (count[s[r]] || 0);
+        console.log(count[s[r]] || 0);
+
+        while (((r - l + 1) - Math.max(...Object.values(count))) > k) { // Is the current window valid? -length of the window-
+            count[s[l]] -= 1;
+            l += 1;
+        }
+
+        res = Math.max(res, r - l + 1);
+    }
+
+    return res;
+};
+
+function characterReplacementThree(s: string, k: number): number {
+    let count: { [key: string]: number } = {};
+    let res = 0;
+    let l = 0;
+    let maxFreq = 0;
+
+    for (let r = 0; r < s.length; r++) {
+        count[s[r]] = 1 + (count[s[r]] || 0);
+        maxFreq = Math.max(maxFreq, count[s[r]]); // ? Maybe this one became the most frequent.
+
+        while (((r - l + 1) - maxFreq) > k) { // Is the current window valid? -length of the window-
+            count[s[l]] -= 1;
+            l += 1;
+        }
+
+        res = Math.max(res, r - l + 1);
+    }
+
+    return res;
 };
