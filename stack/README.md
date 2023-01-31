@@ -8,8 +8,10 @@ This feature makes it LIFO data structure. LIFO stands for last-in-first-out. He
 
 ## Stack Representation
 
-The following diagram depicts a stack and its operations -
+The following diagram depicts a stack and its operations:
+
 ![stack explanation](https://www.tutorialspoint.com/data_structures_algorithms/images/stack_representation.jpg)
+
 A stack can be implemented by means of Array, Structure, Pointer, and Linked List. Stack can either be a fixed size one or it may have a sense of dynamic resizing. Here, we are going to implement stack using arrays, which makes it a fixed size stack implementation.
 
 ## Basic Operations
@@ -128,7 +130,9 @@ The process of putting a new data element onto stack is known as a Push Operatio
 - **Step 3**: If the stack is not full, increments top to point next empty space.
 - **Step 4**: Adds data element to the stack location, where top is pointing.
 - **Step 5**: Returns success.
+
 ![Push operation](https://www.tutorialspoint.com/data_structures_algorithms/images/stack_push_operation.jpg)
+
 If the linked list is used to implement the stack, then in step 3, we need to allocate space dynamically.
 
 ## Algorithm for Push Operation
@@ -188,6 +192,7 @@ A pop operation may involve the following steps:
 - **Step 3**: if the stack is not empty, accesses the data element at which **top** is pointing
 - **Step 4**: Decreases the value of top by 1.
 - **Step 5**: Returns success.
+
 ![Pop operation](https://www.tutorialspoint.com/data_structures_algorithms/images/stack_pop_operation.jpg)
 
 Algorithm for Pop operation can be derived as follows:
