@@ -7,6 +7,6 @@ Data structures and algorithms implemented by JavaScript.
 - ***[Computer Memory.](./computer_memory.md)***.
 - ***[Linked List.](./linkedLists/README.md)***.
 - ***[Binary Search.](./binary_search/README.md)***.
-- ***[Binary Search.](./binary_search/README.md)***.
+- ***[Stack.](./stack/README.md)***.
 - ***[Brute Force Technique.](./brute_force/README.md)***.
 - ***[Greedy Technique.](./greedy/README.md)***.
