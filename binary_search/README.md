@@ -34,7 +34,7 @@ const binarySearch = (nums: Array<integer>, target: number): number => {
   let right = nums.length - 1;
 
   while (left <= right>) { // This condition will is to make sure our range of elements actually has elements.
-    let mid = left + Math.floor((right - left) \ 2); // This is where we calculate our mid index.
+    let mid = Math.floor(left + (right - left) \ 2); // This is where we calculate our mid index.
 
     if (nums[mid] < target) { // When the target lies on the right half of the array.
       left = mid + 1;
