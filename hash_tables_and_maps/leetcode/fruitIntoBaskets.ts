@@ -39,3 +39,29 @@ function totalFruitTwo(fruits: number[]): number {
 
   return max;
 };
+
+// ? Time Complexity: O(n), Space Complexity: O(n).
+function totalFruitThree(fruits: number[]): number {
+  const basket: { [key: number]: number } = {};
+  let [l, r] = [0, 0];
+
+  for (const [right, fruit] of Object.entries(fruits)) {
+    basket[fruit] = (basket[fruit] || 0) + 1;
+
+    // ? If the current window has more than 2 types fo fruit, we remove one fruit from the
+    // ? left index (l) of the window.
+    if (Object.keys(basket).length > 2) {
+      basket[fruits[l]] -= 1;
+
+      // ? If the number of fruits[l] is 0, remove it from the basket.
+      if (basket[fruits[l]] === 0) {
+        delete basket[fruits[l]];
+      }
+
+      l += 1;
+    }
+    r = Number(right);
+  }
+
+  return r - l + 1;
+};
